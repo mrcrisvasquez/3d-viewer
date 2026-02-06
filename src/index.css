@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3D Model Viewer - Dark Theme Design System */
+
+@layer base {
+  :root {
+    /* Dark slate background */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    /* Cards/Panels with glassmorphism */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Blue to purple gradient accent */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 25%;
+    --input: 215 28% 25%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    /* Custom colors for stats */
+    --stat-gpu: 217 91% 60%;
+    --stat-topology: 187 100% 50%;
+    --stat-materials: 270 91% 65%;
+
+    /* Gradient accent */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(270 91% 65%));
+
+    /* Glassmorphism */
+    --glass-bg: rgba(15, 23, 42, 0.95);
+    --glass-border: rgba(100, 116, 139, 0.3);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 25%;
+    --input: 215 28% 25%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow: hidden;
+  }
+}
+
+/* Glassmorphism panel style */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Toggle button active state with gradient */
+.toggle-active {
+  background: var(--gradient-primary);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Slider styling */
+.slider-track {
+  background: linear-gradient(90deg, hsl(215 28% 17%), hsl(215 28% 25%));
+}
+
+.slider-thumb {
+  background: var(--gradient-primary);
+}
+
+/* Tabular numbers for stats */
+.stat-value {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Drop zone styling */
+.drop-zone-active {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: hsl(217 91% 60%);
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Smooth transitions */
+.transition-panel {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Canvas container */
+#canvas-container {
+  width: 100vw;
+  height: 100vh;
+}
