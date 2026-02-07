@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/3dviewer/(.*)",
+            "destination": "/$1"
+        },
+        {
+            "source": "/3dviewer",
+            "destination": "/index.html"
+        }
+    ]
+}

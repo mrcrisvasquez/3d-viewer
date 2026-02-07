@@ -14,7 +14,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* AQUÍ ESTÁ EL CAMBIO CLAVE: */}
+      <BrowserRouter basename="/3dviewer">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
